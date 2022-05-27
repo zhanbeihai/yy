@@ -439,7 +439,7 @@ def train(hyp,  # path/to/hyp.yaml or hyp dictionary
 
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default= '../input/apple1/weights/darknet53.conv.74', help='initial weights path')
+    parser.add_argument('--weights', type=str, default= '/kaggle/working/input/apple1/weights/darknet53.conv.74', help='initial weights path')
     parser.add_argument('--cfg', type=str, default='cfg/yolov3.cfg', help='*.cfg path')
     parser.add_argument('--data', type=str, default= 'data/yolo.data', help='*.data path')
     parser.add_argument('--hyp', type=str, default= 'data/hyps/hyp.scratch.yaml', help='hyperparameters path')
