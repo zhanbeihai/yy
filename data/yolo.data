@@ -1,5 +1,5 @@
 classes=1
-train=VOCdevkit/VOC2007/train.txt
-valid=VOCdevkit/VOC2007/test.txt
+train=../input/apple1/VOCdevkit/VOC2007/train.txt
+valid=../input/apple1/VOCdevkit/VOC2007/test.txt
 names=data/yolo.names
 backup=backup/
