@@ -3,7 +3,7 @@
 Train a  model on a custom dataset
 
 Usage:
-    $ python path/to/train.py --data yolo.date --weights yolov3.pt --img 640
+    $ python path/to/train.py --data coco128.yaml --weights yolov3.pt --img 640
 """
 import argparse
 import math
@@ -439,10 +439,10 @@ def train(hyp,  # path/to/hyp.yaml or hyp dictionary
 
 def parse_opt(known=False):
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', type=str, default= '/kaggle/working/input/apple1/weights/darknet53.conv.74', help='initial weights path')
+    parser.add_argument('--weights', type=str, default= 'kaggle/working/input/apple1/weights/darknet53.conv.74', help='initial weights path')
     parser.add_argument('--cfg', type=str, default='cfg/yolov3.cfg', help='*.cfg path')
-    parser.add_argument('--data', type=str, default= 'data/yolo.data', help='*.data path')
-    parser.add_argument('--hyp', type=str, default= 'data/hyps/hyp.scratch.yaml', help='hyperparameters path')
+    parser.add_argument('--data', type=str, default=ROOT / 'data/yolo.data', help='*.data path')
+    parser.add_argument('--hyp', type=str, default=ROOT / 'data/hyps/hyp.scratch.yaml', help='hyperparameters path')
     parser.add_argument('--epochs', type=int, default=300)
     parser.add_argument('--batch-size', type=int, default=16, help='total batch size for all GPUs, -1 for autobatch')
     parser.add_argument('--imgsz', '--img', '--img-size', type=int, default=640, help='train, val image size (pixels)')
@@ -461,7 +461,7 @@ def parse_opt(known=False):
     parser.add_argument('--adam', action='store_true', help='use torch.optim.Adam() optimizer')
     parser.add_argument('--sync-bn', action='store_true', help='use SyncBatchNorm, only available in DDP mode')
     parser.add_argument('--workers', type=int, default=8, help='max dataloader workers (per RANK in DDP mode)')
-    parser.add_argument('--project', default='runs/train', help='save to project/name')
+    parser.add_argument('--project', default=ROOT / 'runs/train', help='save to project/name')
     parser.add_argument('--name', default='exp', help='save to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
     parser.add_argument('--quad', action='store_true', help='quad dataloader')
